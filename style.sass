@@ -1,0 +1,286 @@
+/*
+	*Theme Name: Van 360 Maya
+	*Theme URI:
+	*Description: Custom theme for Van 360 Maya
+	*Author: WeRTheD
+	*Author URI:
+	*Template: blankslate
+	*Version: 1.0.2
+	*/
+
+@import '../../Dropbox/bourbon/_bourbon'
+
+$turquesa: #169e9a
+$turquesa-o: #336666
+$carne: #cc9966
+
+@font-face
+	font-family: 'Optima'
+	src: url('fonts/Optima-ExtraBlack.eot')
+	src: url('fonts/Optima-ExtraBlack.eot?#iefix') format('embedded-opentype'),url('fonts/Optima-ExtraBlack.woff') format('woff'),url('fonts/Optima-ExtraBlack.ttf') format('truetype')
+	font-weight: 900
+	font-style: normal
+
+@font-face
+	font-family: 'Optima'
+	src: url('fonts/Optima-Bold.eot')
+	src: url('fonts/Optima-Bold.eot?#iefix') format('embedded-opentype'),url('fonts/Optima-Bold.woff') format('woff'),url('fonts/Optima-Bold.ttf') format('truetype')
+	font-weight: bold
+	font-style: normal
+
+@font-face
+	font-family: 'Optima'
+	src: url('fonts/Optima-Regular.eot')
+	src: url('fonts/Optima-Regular.eot?#iefix') format('embedded-opentype'),url('fonts/Optima-Regular.woff') format('woff'),url('fonts/Optima-Regular.ttf') format('truetype')
+	font-weight: normal
+	font-style: normal
+
+body
+	color: #333
+	font-family: "Optima",serif
+	font-weight: 100
+	font-size: 1.2em
+	line-height: 1.8
+	margin: 0
+	padding: 0
+
+header,section.bottom,footer
+	left: 0
+	text-align: center
+	width: 100vw
+	.logo
+		img
+			display: block
+	nav
+		a
+			display: inline-block
+			text-decoration: none
+			vertical-align: top
+header,footer
+	position: fixed
+	z-index: 99
+
+header
+	top: 0
+	.inner
+		@include display(flex)
+		@include align-items(center)
+		@include justify-content(space-between)
+		padding-bottom: 10px
+		padding-top: 10px
+	.logo
+		img
+			height: 60px
+	nav
+		a
+			color: $turquesa
+			margin-left: 2.5vw
+			text-transform: uppercase
+
+section
+	position: relative
+	width: 100vw
+	h1,h2
+		&.special-title
+			line-height: 1
+			position: relative
+			small,span,strong
+				position: relative
+			span,strong
+				display: block
+			small,span
+				font-weight: normal
+				white-space: nowrap
+			small
+				color: $carne
+				&.right
+					display: block
+					right: 100%
+					position: absolute
+					&:after
+						border-bottom: 1px solid $carne
+						bottom: -12px
+						content: ''
+						display: block
+						position: absolute
+						right: 0
+						width: 60%
+				&.bottom
+					display: inline-block
+					&:after
+						@include transform(translateX(2vw))
+						border-bottom: 1px solid $carne
+						bottom: 50%
+						content: ''
+						display: block
+						height: 1px
+						position: absolute
+
+			span
+				color: #003333
+			strong
+				color: $turquesa-o
+	h1
+		font-size: 48px
+		&.special-title
+			small
+				font-size: 24px
+				&.right
+					line-height: 56px
+					@include transform(translateX(-2vw))
+					&:after
+						width: 60px
+				&.bottom
+					margin-top: 2vw
+					&:after
+						left: 100%
+						width: 100%
+	h2
+		font-size: 36px
+		small
+			font-size: 27px
+			&.right
+				line-height: 40px
+				@include transform(translateX(-1.4vw))
+				&:after
+					width: 80px
+			&.bottom
+				margin-top: 1.4vw
+				&:after
+
+
+
+	.hero
+		display: flex
+		margin: auto
+		height: 100vh
+		width: 75vw
+		.inner
+			align-self: center
+	&.uc
+		@include display(flex)
+		@include flex-flow(row column)
+		height: 100vh
+		line-height: 4vw
+		text-align: center
+		.inner
+			padding: 0
+			position: absolute
+			top: 50%
+			@include transform(translateY(-50%))
+			width: 100%
+			a
+				color: #FFFFFF
+			img
+				width: 40vh
+			span
+				line-height: 1.5
+				margin-top: 3vh
+			nav
+				font-size: 0
+				margin-top: 3vh
+				padding: 7px 0
+				a
+					display: inline-block
+					font-size: 24px
+					height: 40px
+					line-height: 40px
+					margin: 0 10px
+					position: relative
+					width: 40px
+					&:before,&:after
+						content: ''
+						display: block
+						@include border-top-radius(100%)
+						@include border-right-radius(100%)
+						@include border-bottom-radius(100%)
+						@include border-left-radius(100%)
+					&:before
+						background-color: #000
+						height: 100%
+						width: 100%
+					&:after
+						@include transform(translate(-50%,-50%) scale(1.2))
+						border: 1px solid #000
+						height: 100%
+						left: 50%
+						position: absolute
+						top: 50%
+						width: 100%
+					i
+						color: #DFEBE9
+						left: 50%
+						position: absolute
+						top: 50%
+						@include transform(translate(-50%,-50%))
+
+		span
+			display: block
+	&.bottom
+		padding: 7vw 0 9vw
+		text-align: center
+		.logo
+			img
+				margin: auto
+				height: 20vh
+		nav
+			font-size: 0
+			margin-top: 3vh
+			padding: 7px 0
+			a
+				font-size: 32px
+				height: 62px
+				line-height: 62px
+				margin: 0 4vw
+				position: relative
+				width: 62px
+				&:before,&:after
+					content: ''
+					display: block
+					@include border-top-radius(100%)
+					@include border-right-radius(100%)
+					@include border-bottom-radius(100%)
+					@include border-left-radius(100%)
+				&:before
+					background-color: #000
+					height: 100%
+					width: 100%
+				&:after
+					@include transform(translate(-50%,-50%) scale(1.2))
+					border: 1px solid #000
+					height: 100%
+					left: 50%
+					position: absolute
+					top: 50%
+					width: 100%
+				i
+					color: #DFEBE9
+					left: 50%
+					position: absolute
+					top: 50%
+					@include transform(translate(-50%,-50%))
+	
+
+
+footer
+	background-color: #FFF
+	bottom: 0
+	width: 100%
+	ul
+		margin: 0
+		padding: 0
+		li
+			display: inline-block
+			line-height: 40px
+			vertical-align: top
+
+
+.inner
+	box-sizing: border-box
+	margin: auto
+	padding-left: 4vw
+	padding-right: 4vw
+	width: 100vw
+
+.light-gradient
+	@include background-image(linear-gradient(#FFFFFF 0, #c6e3e0 50%, #049F9D 100%))
